@@ -1,0 +1,73 @@
+body{
+    margin:0;
+    text-align: center;
+    background-image: url("/images/deepbluewater.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    display: flex;
+    color: black;
+    border: solid 3px coral;
+    justify-content: center;
+}
+
+.congratsMsg{
+    margin-top: 30px;
+    color: black;
+    font-size: 24px;
+}
+
+.monChampquizz{
+    width: 100%;
+}
+
+.recapBox1{
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.recapBoxUser {
+    margin-left: 200px;
+    margin-right: 50px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.conteneurRecapTest{
+    margin-right: 30px;
+    padding: 30px;
+    background-color: cadetblue;
+    border: 3px solid coral;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+.afficheScore{
+    font-size: 32px;
+}
+
+.monLienRetour{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.monLienRetour2{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.backToTheFuture {
+    color: orangered;
+    font-size: 32px;
+}
+
+.linkscore {
+    color: orangered;
+    font-size: 32px;
+}

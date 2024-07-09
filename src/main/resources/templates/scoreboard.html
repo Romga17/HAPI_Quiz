@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Résultat Quizz</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/styles/scoreboardStyle.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <p class="guerriersMsg" style="text-decoration: underline">Nos guerriers les plus redoutables:</p>
+
+        <div class="warrior_pic">
+            <img class ="warrior" src="/images/warrior.svg" alt="image nerd"/>
+        </div>
+
+        <form>
+            <fieldset class="champGuerriers">
+
+                    <div class="board">
+                        <ol>
+                            <li th:each="PerformanceJoueur: ${tabscore}" th:text="${PerformanceJoueur}"></li>
+                        </ol>
+                    </div>
+
+            </fieldset>
+        </form>
+
+            <div class="playAgain">
+                <a class="playAgain" href="http://localhost:8080/connexion">C'est reparti pour un tour !</a>
+            </div>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hapi Quizz Accueil</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/styles/indexStyle.css}" rel="stylesheet" />
+    </head>
+    <body>
+            <div class="body_container">
+                    <div class="montitre">
+                        <h1>Bienvenue sur HAPI Quizz</h1>
+                    </div>
+
+                    <div class="duo_pic">
+                        <img class ="nerdpic" src="/images/nerd.svg" alt="image nerd">
+                        <img class ="testpic" src="/images/test.svg" alt="image nerd">
+                    </div>
+
+                    <div class="fieldset_quizz">
+
+                        <fieldset class="monchampquizz">
+                            <p>Avant de vous mesurer aux autres guerriers du Quizz, choisissez votre pseudo:</p>
+
+                                <form action="#" th:action="@{/login}" method="GET">
+
+                                    <div class="container_pseudo">
+                                        <label for="pseudo"></label>
+                                        <input required="required" type="text" name="pseudo" id="pseudo"/>
+                                    </div>
+
+                                    <div class="submit_button_pseudo">
+                                        <input class="button_pseudo" type="submit" value="Let's gooo!" />
+                                    </div>
+
+                                </form>
+
+                        </fieldset>
+                    </div>
+
+                    <footer>
+                        <div class="monfooter">
+                            <div class="footer_container">
+                                <p>Quizz réalisé par Romain Magagna</p>
+                            </div>
+                            <div class="footer_container">
+                                <p>Cursus CDA Java 2024</p>
+                            </div>
+                            <div class="footer_container">
+                                <p>Contact: rmag17@gagamail.com</p>
+                            </div>
+                        </div>
+                    </footer>
+
+            </div>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hapi Quizz Session</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/styles/quizzStyle.css}" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="montitre">
+            <h1>Début du quizz</h1>
+        </div>
+            <p class = "welcomeMsg" th:text="|Hello ${pseudo} let's gooo pour un quizz de folie !|"> </p>
+
+
+                <div th:if="${index == 0}">
+                    <form action="#" th:action="@{/quizz}" method="POST">
+                        <fieldset class="monchampquizz">
+                            <p style="text-decoration: underline">Cette question à été choisie pour toi aléatoirement, bonne chance:</p>
+                            <p th:text="${questionlogin}"></p>
+
+                            <fieldset>
+                                <legend style="text-decoration: underline">Réponses possibles:</legend>
+
+                                <label>
+                                    <input type="radio" name="repuser" required="required" th:value="${reponsesQuestions.get(0)}">
+                                    <span th:text="${reponsesQuestions.get(0)}"></span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="repuser" required="required" th:value="${reponsesQuestions.get(1)}">
+                                    <span th:text="${reponsesQuestions.get(1)}"></span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="repuser" required="required" th:value="${reponsesQuestions.get(2)}">
+                                    <span th:text="${reponsesQuestions.get(2)}"></span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="repuser" required="required" th:value="${reponsesQuestions.get(3)}">
+                                    <span th:text="${reponsesQuestions.get(3)}"></span>
+                                </label>
+
+                        </fieldset>
+
+                        <input type="submit" class="button" name="valider" value="Valider votre réponse" />
+                        <a href="http://localhost:8080/connexion">Recommencer le quizz</a>
+
+                        <div class="statBox">
+                            <div class="conteneurStat">
+                                <p style="text-decoration: underline">Index de la question:</p>
+                                <p th:text="${index}+1"></p>
+                            </div>
+
+                            <div class="conteneurStat">
+                                <p style="text-decoration: underline">Nombre de questions:</p>
+                                <p th:text="${tailleListe}"></p>
+                            </div>
+
+                            <div class="conteneurStat">
+                                <p style="text-decoration: underline">Score actuel:</p>
+                                <p th:text="${score}"></p>
+                            </div>
+
+                            <div class="conteneurStat">
+                                <p style="text-decoration: underline">Temps actuel:</p>
+                                <p th:text="${timer}"></p>
+                            </div>
+                        </div>
+
+                        </fieldset>
+                   </form>
+            </div>
+
+        <div th:if="${index > 0}">
+            <form action="#" th:action="@{/quizz}" method="POST">
+                <fieldset class="monchampquizz">
+                    <p style="text-decoration: underline">Cette question à été choisie pour toi aléatoirement, bonne chance:</p>
+                    <p th:text="${questionencours}"></p>
+
+                    <fieldset>
+                        <legend style="text-decoration: underline">Réponses possibles:</legend>
+
+                        <label>
+                            <input type="radio" name="repuser" required="required" th:value="${reponsesQuestion.get(0)}">
+                            <span th:text="${reponsesQuestion.get(0)}"></span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="repuser" required="required" th:value="${reponsesQuestion.get(1)}">
+                            <span th:text="${reponsesQuestion.get(1)}"></span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="repuser" required="required" th:value="${reponsesQuestion.get(2)}">
+                            <span th:text="${reponsesQuestion.get(2)}"></span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="repuser" required="required" th:value="${reponsesQuestion.get(3)}">
+                            <span th:text="${reponsesQuestion.get(3)}"></span>
+                        </label>
+
+                    </fieldset>
+
+                    <input type="submit" class="button" name="valider" value="Valider votre réponse" />
+                    <a href="http://localhost:8080/connexion">Recommencer le quizz</a>
+
+                    <div class="statBox">
+                        <div class="conteneurStat">
+                            <p style="text-decoration: underline">Index de la question:</p>
+                            <p th:text="${index}+1"></p>
+                        </div>
+
+                        <div class="conteneurStat">
+                            <p style="text-decoration: underline">Nombre de questions:</p>
+                            <p th:text="${tailleListe}"></p>
+                        </div>
+
+                        <div class="conteneurStat">
+                            <p style="text-decoration: underline">Score actuel:</p>
+                            <p th:text="${score}"></p>
+                        </div>
+
+                        <div class="conteneurStat">
+                            <p style="text-decoration: underline">Temps actuel:</p>
+                            <p th:text="${timer}"></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </body>
+</html>

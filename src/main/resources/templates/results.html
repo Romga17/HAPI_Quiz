@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Résultat Quizz</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/styles/resultStyle.css}" rel="stylesheet" />
+    </head>
+    <body>
+
+        <h1>Merci pour ta participation</h1>
+        <p class="congratsMsg" th:text="|Pas mal ${pseudo} !!! Voici le récapitulatif de ta session Quizz:|"> </p>
+
+        <form>
+            <fieldset class="monChampResultats">
+
+                    <div class="recapBox1">
+
+                        <div class="conteneurRecapTest">
+                            <p style="text-decoration: underline">Vue d'ensemble des questions posées:</p>
+                            <ol>
+                                <li th:each="string: ${allQuestionsOverview}" th:text="${string}"></li>
+                            </ol>
+                        </div>
+
+                        <div class="conteneurRecapTest">
+                            <p style="text-decoration: underline">Réponses attendues:</p>
+                            <ol>
+                                <li th:each="string: ${allReponsesOverview}" th:text="${string}"></li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <div class="recapBoxUser">
+
+                        <div class="conteneurRecapTest">
+                            <p style="text-decoration: underline">Vos réponses:</p>
+                            <ol>
+                                <li th:each="string: ${listeRepUser}" th:text="${string}"></li>
+                            </ol>
+                        </div>
+
+                        <div class="conteneurRecapTest">
+                            <p style="text-decoration: underline">Votre résultat:</p>
+                            <p class = "afficheScore" th:text="| ${score} / ${tailleListe} |"></p>
+                        </div>
+
+                        <div class="conteneurRecapTest">
+                            <p style="text-decoration: underline">Temps écoulé en secondes:</p>
+                            <p th:text="${timer.getTimeElapsed()}"></p>
+                        </div>
+                    </div>
+
+            </fieldset>
+        </form>
+
+        <div class="monLienRetour">
+            <a class="backToTheFuture" href="http://localhost:8080/connexion">C'est reparti pour un tour !</a>
+        </div>
+
+        <div class="monLienRetour2">
+            <a class="linkscore" href="http://localhost:8080/scoreboard">Les plus grands guerriers</a>
+        </div>
+
+    </body>
+</html>
